@@ -1,49 +1,60 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 import java.io.*;
 import java.net.*;
 import java.util.*;
 
 // Client class
 class Client {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Client");
+        JTextField inputField = new JTextField(20);
+        JButton sendButton = new JButton("Send");
+        JButton exitButton = new JButton("Exit");
 
-    // driver code
-    public static void main(String[] args)
-    {
-        // establish a connection by providing host and port
-        // number
+        JPanel panel = new JPanel();
+        panel.add(inputField);
+        panel.add(sendButton);
+        panel.add(exitButton);
+
+        frame.add(panel);
+        frame.setSize(300, 300);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+
         try (Socket socket = new Socket("localhost", 5000)) {
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-            // writing to server
-            PrintWriter out = new PrintWriter(
-                    socket.getOutputStream(), true);
+            sendButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    String message = inputField.getText();
+                    out.println(message);
+                    inputField.setText("");
+                }
+            });
 
-            // reading from server
-            BufferedReader in
-                    = new BufferedReader(new InputStreamReader(
-                    socket.getInputStream()));
+            exitButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    try {
+                        out.println("exit");
+                        socket.close();
+                        System.exit(0);
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            });
 
-            // object of scanner class
-            Scanner sc = new Scanner(System.in);
-            String line = null;
-
-            while (!"exit".equalsIgnoreCase(line)) {
-
-                // reading from user
-                line = sc.nextLine();
-
-                // sending the user input to server
-                out.println(line);
-                out.flush();
-
-                // displaying server reply
-                System.out.println("Server replied "
-                        + in.readLine());
+            while (true) {
+                System.out.println("Server replied: " + in.readLine());
+                // You can handle server responses here if needed
+                // For example: System.out.println("Server replied: " + in.readLine());
             }
-
-            // closing the scanner object
-            sc.close();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 }
+
