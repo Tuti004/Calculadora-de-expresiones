@@ -1,5 +1,8 @@
 # Evaluación de expresiones matemáticas
-Proyecto Evaluación de expresiones matemáticas, Tecnológico de Costa Rica
+Proyecto Evaluación de expresiones matemáticas
+
+Tecnológico de Costa Rica
+
 Gustavo Calderon Perez, Sebastian Alvarado Ma
 
 Latex: https://www.overleaf.com/read/ggpnbyncsqtc
