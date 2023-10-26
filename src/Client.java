@@ -4,6 +4,7 @@ import java.awt.event.*;
 import java.io.*;
 import java.net.*;
 import java.util.*;
+import java.util.Stack;
 
 // Client class
 class Client {
@@ -13,12 +14,14 @@ class Client {
         JButton sendButton = new JButton("Send");
         JButton exitButton = new JButton("Exit");
         JButton cameraButton = new JButton("Open Camera");
+        JLabel answer = new JLabel((""));
 
         JPanel panel = new JPanel();
         panel.add(inputField);
         panel.add(sendButton);
         panel.add(cameraButton);
         panel.add(exitButton);
+        panel.add(answer);
 
         exitButton.setBounds(50,150, 200,30);
 
@@ -52,6 +55,9 @@ class Client {
             });
 
             while (true) {
+
+
+
                 System.out.println("Server replied: " + in.readLine());
                 // You can handle server responses here if needed
                 // For example: System.out.println("Server replied: " + in.readLine());

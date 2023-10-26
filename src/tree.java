@@ -178,7 +178,7 @@ public class tree {
         ExpressionTree et = new ExpressionTree();
 
         System.out.println("\nEnter equation in infix form");
-        et.buildTreeFromInfix(scan.next());
+        et.buildTreeFromInfix("2+2");
 
         System.out.print("\nPrefix  : ");
         et.prefix();
