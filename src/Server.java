@@ -271,7 +271,7 @@ class Server {
                     System.out.printf(
                             " Sent from the client: %s\n",
                             line);
-                    out.println(line);
+                    out.println(et.evaluate());
 
                 //asd
                 }
