@@ -114,7 +114,7 @@ class Server {
                         }
 
                         private boolean isOperator(char ch) {
-                            return ch == '+' || ch == '-' || ch == '*' || ch == '/';
+                            return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '^';
                         }
 
                         public void buildTreeFromInfix(String infix) {
@@ -158,7 +158,10 @@ class Server {
                                     return 1;
                                 case '*':
                                 case '/':
+                                case '%':
                                     return 2;
+                                case '^':
+                                    return 3;
                             }
                             return -1;
                         }
@@ -238,6 +241,12 @@ class Server {
                                         break;
                                     case '/':
                                         result = left / right;
+                                        break;
+                                    case '%':
+                                        result = left % right;
+                                        break;
+                                    case '^':
+                                        result = Math.pow(left, right);
                                         break;
                                     default:
                                         result = left + right;

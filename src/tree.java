@@ -32,7 +32,7 @@ class ExpressionTree {
     }
 
     private boolean isOperator(char ch) {
-        return ch == '+' || ch == '-' || ch == '*' || ch == '/';
+        return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '^';
     }
 
     public void buildTreeFromInfix(String infix) {
@@ -76,7 +76,10 @@ class ExpressionTree {
                 return 1;
             case '*':
             case '/':
+            case '%':
                 return 2;
+            case '^':
+                return 3;
         }
         return -1;
     }
@@ -157,6 +160,12 @@ class ExpressionTree {
                 case '/':
                     result = left / right;
                     break;
+                case '%':
+                    result = left % right;
+                    break;
+                case '^':
+                    result = Math.pow(left, right);
+                    break;
                 default:
                     result = left + right;
                     break;
@@ -178,7 +187,7 @@ public class tree {
         ExpressionTree et = new ExpressionTree();
 
         System.out.println("\nEnter equation in infix form");
-        et.buildTreeFromInfix("2+2");
+        et.buildTreeFromInfix(scan.next());
 
         System.out.print("\nPrefix  : ");
         et.prefix();
