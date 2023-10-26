@@ -12,14 +12,18 @@ class Client {
         JTextField inputField = new JTextField(20);
         JButton sendButton = new JButton("Send");
         JButton exitButton = new JButton("Exit");
+        JButton cameraButton = new JButton("Open Camera");
 
         JPanel panel = new JPanel();
         panel.add(inputField);
         panel.add(sendButton);
+        panel.add(cameraButton);
         panel.add(exitButton);
 
+        exitButton.setBounds(50,150, 200,30);
+
         frame.add(panel);
-        frame.setSize(300, 300);
+        frame.setSize(500, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
 
