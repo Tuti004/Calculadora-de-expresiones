@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7848b2e-8d4b-477c-9808-d7d88ad2023c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a7848b2e-8d4b-477c-9808-d7d88ad2023c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,9 +16,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -35,8 +30,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/sebas/Downloads/opencv/build/java/x64/opencv_java480.dll",
+    "last_opened_file_path": "C:/Users/sebas/IdeaProjects/Evaluacion-de-expresiones-matemeticas",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -140,8 +134,7 @@
       <workItem from="1698294024494" duration="12105000" />
       <workItem from="1698306968896" duration="6000" />
       <workItem from="1698359918575" duration="15089000" />
-      <workItem from="1698388043066" duration="931000" />
-      <workItem from="1698389754903" duration="316000" />
+      <workItem from="1698388043066" duration="1702000" />
     </task>
     <servers />
   </component>
