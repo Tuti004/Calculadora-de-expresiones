@@ -1,11 +1,18 @@
 package org.example;
 
-
+/**
+ *importa libreria File usada para poder accesar el archivo de tessarrect
+ */
 import java.io.File;
-
+/**
+ * importa libreria de tessarrect para que pueda ser usado en el programa
+ */
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
 
+/**
+ * La clase ReadImage usa la libreria tessarrect y lee la imagen tomada por la camara
+ */
 public class ReadImage {
     String text = "";
     public String leerImagen() {

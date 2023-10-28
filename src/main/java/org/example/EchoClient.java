@@ -3,6 +3,9 @@ package org.example;
 import java.io.*;
 import java.net.*;
 
+/**
+ *
+ */
 public class EchoClient {
 
     private Socket clientSocket;

@@ -3,8 +3,15 @@ package org.example;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//Hola
+/**
+ * La clase ClientUi construye la interfaz que es vista por el cliente al usar la aplicacion
+ *
+ */
 public class ClientUI {
+    /**
+     * Declaracion de todas las variables de las partes de la interfaz: como los botones, cuadros de texto.
+     * Tambien define que hacen las partes de la interfaz.
+     */
     private JPanel panelMain;
     private JTextField textField1;
     private JButton guardarButton;
@@ -18,6 +25,9 @@ public class ClientUI {
     DefaultListModel listModel = new DefaultListModel();
 
     public ClientUI() {
+        /**
+         * abre la camara para tomar una imagen
+         */
         tomarImagenButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -35,12 +45,18 @@ public class ClientUI {
                 list1.setModel(listModel);
             }
         });
+        /**
+         * guarda el nombre del usuario
+         */
         guardarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 client.name = textField1.getText();
             }
         });
+        /**
+         * cierra la conexion del servidor
+         */
         cerrarConexiónButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
