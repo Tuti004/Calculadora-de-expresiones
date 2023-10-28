@@ -7,6 +7,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Calendar;
 
+
+/**
+ * Server!! Crea una conexion entre clientes y servidor, realiza sockets y crea n conexiones por medio de hilos
+ */
 public class EchoMultiServer {
 
     private ServerSocket serverSocket;

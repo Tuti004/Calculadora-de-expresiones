@@ -59,6 +59,6 @@ public class PruebasSocket {
 
         client3.stopConnection();
         
-        // Recordar detenet programa
+        // Recordar detener programa
     }
 }
