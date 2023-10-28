@@ -8,11 +8,6 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.concurrent.Executors;
 
-
-/**
- *
- * @author dylan
- */
 public class PruebasSocket {
 
     private static int port;
