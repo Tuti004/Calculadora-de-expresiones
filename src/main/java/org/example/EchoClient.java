@@ -4,7 +4,7 @@ import java.io.*;
 import java.net.*;
 
 /**
- *
+ *AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
  */
 public class EchoClient {
 

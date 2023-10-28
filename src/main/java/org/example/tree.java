@@ -1,6 +1,8 @@
 package org.example;
 
-import java.util.Scanner;
+/**
+ *importa la clase Stack para crear el arbol
+ */
 import java.util.Stack;
 
 class ExpressionTree {
@@ -20,28 +22,40 @@ class ExpressionTree {
     public ExpressionTree() {
         stack = new Stack<>();
     }
-
+    /**
+     * empuja los nodos en el arbol
+     */
     private void push(TreeNode ptr) {
         stack.push(ptr);
     }
-
+    /**
+     * quita los nodos del arbol
+     */
     private TreeNode pop() {
         return stack.pop();
     }
-
+    /**
+     * checkea si lo que ingresa el cliente es un digito
+     */
     private boolean isDigit(char ch) {
         return ch >= '0' && ch <= '9';
     }
-
+    /**
+     * checkea si lo que ingresa el cliente es un operador
+     */
     private boolean isOperator(char ch) {
         return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '^';
     }
-
+    /**
+     * construye el arbol usando la notacion postfija
+     */
     public void buildTreeFromInfix(String infix) {
         String postfix = infixToPostfix(infix);
         buildTree(postfix);
     }
-
+    /**
+     * pasa la operacion ingresada por el usuario en infijo a postfijo
+     */
     private String infixToPostfix(String infix) {
         StringBuilder postfix = new StringBuilder();
         Stack<Character> operators = new Stack<>();
@@ -70,7 +84,9 @@ class ExpressionTree {
 
         return postfix.toString();
     }
-
+    /**
+     * define orden de operaciones
+     */
     private int precedence(char ch) {
         switch (ch) {
             case '+':
@@ -85,7 +101,9 @@ class ExpressionTree {
         }
         return -1;
     }
-
+    /**
+     * construye el arbol usando la notacion postfija
+     */
     public void buildTree(String postfix) {
         for (char ch : postfix.toCharArray()) {
             if (isDigit(ch)) {
@@ -135,18 +153,22 @@ class ExpressionTree {
             preOrder(ptr.right);
         }
     }
-
-    public double evaluate() {
-        return evaluate(stack.peek());
+    /**
+     * retorna la operacion usando evaluateAlgebraic
+     */
+    public double evaluateAlgebraic() {
+        return evaluateAlgebraic(stack.peek());
     }
-
-    private double evaluate(TreeNode ptr) {
+    /**
+     * Hace las operaciones correspondientes con al arbol Algebraico
+     */
+    private double evaluateAlgebraic(TreeNode ptr) {
         if (ptr.left == null && ptr.right == null)
             return toDigit(ptr.data);
         else {
             double result = 0.0;
-            double left = evaluate(ptr.left);
-            double right = evaluate(ptr.right);
+            double left = evaluateAlgebraic(ptr.left);
+            double right = evaluateAlgebraic(ptr.right);
             char operator = ptr.data;
 
             switch (operator) {
@@ -175,12 +197,16 @@ class ExpressionTree {
             return result;
         }
     }
-
+    /**
+     * AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+     */
     private int toDigit(char ch) {
         return ch - '0';
     }
 }
-
+/**
+ * Crea una instancia del arbol a base de la expresion recibida
+ */
 public class tree {
     public static void main(String[] args) {
         System.out.println("Expression Tree Test");
@@ -193,6 +219,6 @@ public class tree {
         et.infix();
         System.out.print("\n\nPostfix : ");
         et.postfix();
-        System.out.println("\n\nEvaluated Result : " + et.evaluate());
+        System.out.println("\n\nEvaluated Result : " + et.evaluateAlgebraic());
     }
 }

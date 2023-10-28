@@ -1,8 +1,12 @@
 package org.example;
-
+/**
+ *importa la clase Stack para crear el arbol
+ */
 import java.util.Scanner;
 import java.util.Stack;
-
+/**
+ * Clase de arbol logico
+ */
 class ExpressionTree2 {
     class TreeNode {
         char data;
@@ -20,23 +24,33 @@ class ExpressionTree2 {
     public ExpressionTree2() {
         stack = new Stack<>();
     }
-
+    /**
+     * empuja los nodos en el arbol
+     */
     private void push(TreeNode ptr) {
         stack.push(ptr);
     }
-
+    /**
+     * quita los nodos del arbol
+     */
     private TreeNode pop() {
         return stack.pop();
     }
-
+    /**
+     * checkea si lo que ingresa el cliente es un digito
+     */
     private boolean isDigit(char ch) {
         return ch >= '0' && ch <= '9';
     }
-
+    /**
+     * checkea si lo que ingresa el cliente es un operador
+     */
     private boolean isOperator(char ch) {
         return ch == '+' || ch == '-' || ch == '*' || ch == '/' || ch == '%' || ch == '&' || ch == '|' || ch == '!' || ch == '^';
     }
-
+    /**
+     * define orden de operaciones
+     */
     private int precedence(char ch) {
         if (ch == '+' || ch == '-') {
             return 1;
@@ -51,12 +65,16 @@ class ExpressionTree2 {
         }
         return -1;
     }
-
+    /**
+     * construye el arbol usando la notacion postfija
+     */
     public void buildTreeFromInfix(String infix) {
         String postfix = infixToPostfix(infix);
         buildTree(postfix);
     }
-
+    /**
+     * pasa la operacion ingresada por el usuario en infijo a postfijo
+     */
     private String infixToPostfix(String infix) {
         StringBuilder postfix = new StringBuilder();
         Stack<Character> operators = new Stack<>();
@@ -85,7 +103,9 @@ class ExpressionTree2 {
 
         return postfix.toString();
     }
-
+    /**
+     * construye el arbol usando la notacion postfija
+     */
     public void buildTree(String postfix) {
         for (char ch : postfix.toCharArray()) {
             if (isDigit(ch)) {
@@ -99,11 +119,15 @@ class ExpressionTree2 {
             }
         }
     }
-
+    /**
+     * retorna la operacion usando evaluateLogical
+     */
     public boolean evaluate() {
         return evaluateLogical(stack.peek());
     }
-
+    /**
+     * Hace las operaciones correspondientes con al arbol logico
+     */
     private boolean evaluateLogical(TreeNode ptr) {
         boolean left, right;
         if (ptr.left == null && ptr.right == null) {
@@ -128,7 +152,9 @@ class ExpressionTree2 {
         }
     }
 }
-
+/**
+ * Crea una instancia del arbol a base de la expresion recibida
+ */
 public class logictree {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);

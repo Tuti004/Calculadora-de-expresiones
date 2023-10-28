@@ -74,7 +74,7 @@ public class EchoMultiServer {
                         } else {
                             ExpressionTree et = new ExpressionTree();
                             et.buildTreeFromInfix(message[1]);
-                            ResultadoFinal = message[0] + ", " + message[1] + ", " + et.evaluate() + ", " + getDate();
+                            ResultadoFinal = message[0] + ", " + message[1] + ", " + et.evaluateAlgebraic() + ", " + getDate();
                         }
                         file.AppendStringToFile(ResultadoFinal,"");
                         out.println(ResultadoFinal);
