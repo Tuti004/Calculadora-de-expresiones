@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package main.java.org.example;
+package org.example;
 
 import java.io.IOException;
 import java.net.ServerSocket;

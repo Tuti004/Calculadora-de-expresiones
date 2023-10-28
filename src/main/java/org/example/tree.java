@@ -1,4 +1,4 @@
-package main.java.org.example;
+package org.example;
 
 import java.util.Scanner;
 import java.util.Stack;
