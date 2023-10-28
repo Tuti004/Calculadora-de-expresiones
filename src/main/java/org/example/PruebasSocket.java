@@ -7,11 +7,12 @@ package org.example;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.concurrent.Executors;
-
+/**
+ * Revisa si hay conexion o no para poder correr varios clientes
+ */
 public class PruebasSocket {
 
     private static int port;
-    
     public static void main(String[] args) throws IOException, InterruptedException {
         // Take an available port
         ServerSocket s = new ServerSocket(5555);
