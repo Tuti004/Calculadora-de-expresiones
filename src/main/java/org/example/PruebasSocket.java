@@ -21,7 +21,9 @@ public class PruebasSocket {
 
         Executors.newSingleThreadExecutor().submit(() -> new EchoMultiServer().start(port));
         Thread.sleep(2000);
-
+/**
+ * Instancia de uno de los clientes cuando se conecta
+ */
         EchoClient client1 = new EchoClient();
         client1.startConnection("127.0.0.1", port);
         String msg1 = client1.sendMessage("hello");

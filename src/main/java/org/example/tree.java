@@ -117,7 +117,9 @@ class ExpressionTree {
             }
         }
     }
-
+    /**
+     * convierte el problema en postfijo para imprimirlo
+     */
     public void postfix() {
         postOrder(stack.peek());
     }
@@ -141,7 +143,9 @@ class ExpressionTree {
             inOrder(ptr.right);
         }
     }
-
+    /**
+     * El problema insertado es impreso como prefijo
+     */
     public void prefix() {
         preOrder(stack.peek());
     }
@@ -197,9 +201,7 @@ class ExpressionTree {
             return result;
         }
     }
-    /**
-     * AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-     */
+
     private int toDigit(char ch) {
         return ch - '0';
     }
@@ -212,7 +214,6 @@ public class tree {
         System.out.println("Expression Tree Test");
         ExpressionTree et = new ExpressionTree();
         et.buildTreeFromInfix("5*3/8+(95%5-10)");
-
         System.out.print("\nPrefix  : ");
         et.prefix();
         System.out.print("\n\nInfix   : ");
